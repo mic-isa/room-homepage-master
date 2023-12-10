@@ -1,0 +1,296 @@
+/* =============== Variables ===============
+- Dark Gray: hsl(0, 0%, 63%)
+- Black: hsl(0, 0%, 0%)
+- White: hsl(0, 0%, 100%)
+- Very Dark Gray: hsl(0, 0%, 27%) */ 
+:root {
+    /* colors */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-very-dark-gray: hsl(0, 0%, 27%);
+    --clr--dark-gray: hsl(0, 0%, 63%);
+    --ff-secondary: 'League Spartan', sans-serif;
+    --radius: 0.250rem;
+    --radius-1: .50rem;
+    --spacing: 0.3rem;
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --transition: all 0.3s linear;
+}
+/* =============== Global Styles =============== */
+
+h3 {
+  letter-spacing: var(--spacing);
+  line-height: 1.05;
+  margin-bottom: 0.45rem;
+  font-family: var(--ff-secondary);
+  --spacing: 0.2rem;
+  --radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,1fr);
+    min-height: 220vh;
+    width: 100vw;
+}
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background-color: var(--clr-white);
+  line-height: 1.2;
+  font-size: 0.875rem;
+  min-height: 100vh;
+  width: 100vw;
+}
+.img-container{
+    background-color: var(--clr-dark-blue);
+    background-image: url(images/image-about-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+}
+.info-container{
+    background-color: var(--clr-white);
+    padding:3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+.info-container p{
+    font-size:0.95rem ;
+    line-height: 1.0rem;
+    color: var(--clr--dark-gray);
+}
+.info-container h2{
+    font-size:2.2rem ;
+    font-weight: 800;
+    line-height: 1.7rem;
+    margin: 1rem 0;
+    
+}
+.info-container.btn{
+    display: none;
+}
+.shop{
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    margin: 1rem 0rem 0 0;
+    border-color: transparent;
+    
+}
+.shop span{
+    margin: 0rem 1.3rem 0 0;
+    font-size:1.20rem ;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: var(--spacing);
+}
+.shop:hover{
+    cursor: pointer;
+    color: var(--clr--dark-gray);
+}
+.btn{
+    height: 14.5%;
+    width: 25.85%;
+    background-color: var(--clr-black);
+    position: absolute;
+    border-radius: 0.08rem;
+    right:  0rem;
+    border:none ;
+    z-index: 3;
+    bottom: 0rem;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding:0 ;
+} 
+
+span.left-btn, span.right-btn{
+    padding:0.55rem 1.5rem;
+    max-width: 80%;
+}
+
+
+.left-btn:hover, .right-btn:hover {
+  background-color: hsl(0, 0%, 27%);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#nav{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom; 
+    z-index: 2;
+    position: relative;
+    
+}
+.nav{
+   display: flex;
+}
+.nav-header{
+    display: flex;
+    gap:10rem;
+    padding:2rem ;
+    color: var(--clr-white);
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index:100;
+}
+.info-btn{
+   display: none;
+}
+.logo{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.show-nav{
+    background-color: var(--clr-white); 
+    color: var(--clr-black);
+    transition: var(--transition);
+    position: relative;
+    align-items: center;
+}
+.show-nav .menu{
+    display: flex;
+    gap:4rem;
+    color: var(--clr-black);
+    align-items: center;
+    
+    top:50%;
+    
+}
+
+.menu img ,.menu li{
+    cursor: pointer;
+}
+
+
+.show-nav .logo, .show-nav .hamburger{
+    display: none;
+    cursor: pointer;
+}
+.hamburger{
+    cursor: pointer;
+}
+
+.nav-image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.menu{
+    display:none ;
+    list-style-type: none;
+    
+}
+.about{
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding:2rem 4rem;
+}
+.about p{
+    font-size:0.95rem ;
+    color: var(--clr--dark-gray);
+}
+
+.im-container{
+    grid-row: span 1;
+    grid-column: span 1;
+    background-image: url(images/image-about-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+@media screen and (min-width: 800px) {
+    section{
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(3,1fr);
+        min-height: 95vh;
+    }
+    
+.img-container{
+    grid-row: span 1;
+    grid-column: span 2;
+    background-position: left bottom;
+}
+.info-container{
+    grid-row: span 2;
+    grid-column: span 3;
+   
+}
+.info-container p{
+    font-size:0.75rem ;
+}
+
+#nav{
+    grid-row: span 2;
+    grid-column: span 4;
+    
+}
+.about{
+    grid-row: span 1;
+    grid-column: span 3;
+}
+.about p{
+    font-size:0.75rem ;
+    color: var(--clr--dark-gray);
+}
+.im-container{
+    grid-row: span 1;
+    grid-column: span 2;
+    
+}
+.btn{
+    height: 10%;
+    width: 33.5%;
+    left: 0.0rem;
+    z-index: 1;
+    bottom: 0%;
+    position: absolute;
+}
+span.left-btn, span.right-btn{
+    padding:0.45rem 1.86rem;
+}
+.nav{
+    display: none;
+ }
+ 
+ .info-btn{
+    display: flex;
+ }
+.hamburger{
+    display: none;
+}
+.close{
+    display: none;
+}
+.menu{
+    display: flex;
+    gap:0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.nav-header{
+    gap:3rem;
+}
+
+}
